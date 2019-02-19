@@ -8,6 +8,7 @@ User.destroy_all
 puts 'start'
 
 toto = User.create!(first_name:"Toto", last_name:"Titi", email:"toto@gmail.com", password:"secret")
+vador = User.create!(first_name:"vodar", last_name:"dark", email:"vador@gmail.com", password:"secret")
 
 
 Spaceship.create!(title: "Millenium Falcon", description:"Legendary Han and Chewie's spaceship", seat:"12", price_per_day: 50, address: "34 cours Edouard Vaillant", user: toto)
@@ -30,4 +31,5 @@ Spaceship.create!(title: "Aurora CL", description:"", seat:"5", price_per_day: 3
 
 Spaceship.create!(title: "P52 Merlin", description:"", seat:"8", price_per_day: 70, address: "73 rue Sainte-Catherine", user: toto)
 
-puts'db ok'
+
+
