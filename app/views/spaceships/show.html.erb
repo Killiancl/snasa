@@ -1,3 +1,4 @@
+
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://thenewswheel.com/wp-content/themes/patterns/timthumb.php?src=https://thenewswheel.com/wp-content/uploads/2018/05/Millennium-Falcon.jpg&q=90&w=660&zc=1);">
     <div class="container">
       <h1>Rent <%= @spaceship.title %> <strong>awesome experiences</strong> to <strong>adventurous snails</strong>!</h1>
@@ -21,14 +22,16 @@
     </div>
 
     <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">Find your day</div>
-          <div class="panel-body">
-            <p>Start Date</p>
-            <p>End Date</p>
-            <%= link_to "Book Me", new_spaceship_booking_path(@spaceship), class: "btn btn-primary" %>
-          </div>
+      <div class="booking-info">
+        <div class="panel panel-default">
+          <div class="panel-heading">Find your day</div>
+            <div class="panel-body">
+              <p>Start Date :</p>
+              <p>End Date :</p>
+              <%= link_to "Book Me", new_spaceship_booking_path(@spaceship), class: "btn btn-primary" %>
+            </div>
         </div>
+      </div>
     </div>
   </div>
 </div>
