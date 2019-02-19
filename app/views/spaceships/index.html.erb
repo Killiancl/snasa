@@ -1,22 +1,8 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to "Home", root_path %>
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Find your Spaceship" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-
-  </div>
-</div>
-
 <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.imgur.com/O49r42B.jpg);">
   <div class="container">
-    <h1>SNASA!</h1>
-    <p>Snail National Aeronautics and Space Administration.</p>
-      <%= link_to "Come with us", new_user_registration_path, :class => "btn btn-primary" %>
+    <h1>SNASA</h1>
+    <p>Snail National Aeronautics and Space Administration</p>
+      <%= link_to "Come with us", new_user_registration_path, :class => "btn btn-ghost" %>
   </div>
 </div>
 
@@ -30,6 +16,8 @@
             <div class="card-description">
               <h2><%= spaceship.title %></h2>
             </div>
+            <p class="card-seat"><%= spaceship.seat %> places</p>
+            <p class="card-price"><strong><%= spaceship.price_per_day %> €</strong></p>
           </div>
         <% end %>
       </div>
@@ -38,16 +26,4 @@
 </div>
 
 
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    Snails rules the world <i class="fas fa-heart"></i>
-  </div>
-</div>
 

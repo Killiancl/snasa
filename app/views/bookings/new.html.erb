@@ -1,0 +1,14 @@
+<div class="container">
+
+<h1>Book <%= @spaceship.title %></h1>
+  <%= simple_form_for [@spaceship, @booking] do |f| %>
+  <%= f.input :start_at  %>
+  <%= f.input :end_at  %>
+  <%= f.button :submit %>
+<% end %>
+
+
+</div>
+
+
+

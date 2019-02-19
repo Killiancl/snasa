@@ -7,26 +7,29 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.create(booking_params)
     @spaceship = Spaceship.find(params[:spaceship_id])
-      if @booking.save
-        redirect_to spaceship_booking_path(@spaceship)
-      else
-        render :new
-      end
+    @booking.spaceship = @spaceship
+    # TODO: set booking user to current_user
+    @booking.user = current_user
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render :new
+    end
   end
 
   def show
     @booking = Booking.find(params[:id])
-    @spaceship = Spaceship.where(spaceship_id: @spaceship.id)
+    @spaceship = Spaceship.find(params[:spaceship_id])
   end
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:total_price, :review, :rating, :start_at, :end_at, :user_id, :spceship_id)
+    params.require(:booking).permit(:start_at, :end_at, :user_id, :spaceship_id)
   end
 
 end
