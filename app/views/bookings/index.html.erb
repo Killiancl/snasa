@@ -2,7 +2,10 @@
   <h1> My Booking : <%= current_user.email %></h1>
     <ul>
       <% @bookings.each do |booking| %>
-        <li><%= booking.spaceship.title %> - Start date: <%= booking.start_at%> <span> to </span> <%= booking.end_at  %></li>
+        <li><%= booking.spaceship.title %> - Start date: <%= booking.start_at%> <span> to </span> <%= booking.end_at %></li>
+        <p> Review : <%= booking.review %> </p>
+        <p> Rating : <%= booking.rating %> </p>
+        <%= link_to "Add a review", new_booking_review_path(booking) %>
       <% end %>
     </ul>
 </div>
