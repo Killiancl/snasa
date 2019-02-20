@@ -1,5 +1,3 @@
-
-
 puts "delete db"
 Booking.destroy_all
 Spaceship.destroy_all
