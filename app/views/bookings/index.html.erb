@@ -1,14 +1,24 @@
 <div class="container">
-  <h1> My Booking : <%= current_user.email %></h1>
-    <ul>
-      <% @bookings.each do |booking| %>
-        <li><%= booking.spaceship.title %> - Start date: <%= booking.start_at%> <span> to </span> <%= booking.end_at %></li>
-        <% if booking.review == nil %>
-          <%= link_to "Add a review", new_booking_review_path(booking) %>
-        <% else %>
-          <p> Review : <%= booking.review %> </p>
-          <p> Rating : <%= booking.rating %> </p>
-        <% end %>
-      <% end %>
-    </ul>
+  <h1> My Bookings : <%= current_user.email %></h1>
+  <% @bookings.each do |booking| %>
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= booking.spaceship.title %></div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="banner-booking" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://thenewswheel.com/wp-content/themes/patterns/timthumb.php?src=https://thenewswheel.com/wp-content/uploads/2018/05/Millennium-Falcon.jpg&q=90&w=660&zc=1);">
+              </div>
+            </div>
+            <div class="col-md-8">
+            <strong> Dates </strong> : <%= booking.start_at%> <span> to </span><%= booking.end_at %>
+            <p> <strong> My Review </strong> : <%= booking.review %> </p>
+            <p> <strong> My Rating </strong> : <%= booking.rating %> </p>
+            <% if booking.review == nil %>
+              <%= link_to "Add a review", new_booking_review_path(booking), class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
