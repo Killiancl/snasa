@@ -13,7 +13,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <ul class="list-group">
-              <li class="list-group-item"><%= @spaceship.seat %> seats</li>
+              <li class="list-group-item"><%= @spaceship.seat %></li>
               <li class="list-group-item"><%= @spaceship.price_per_day %> €</li>
               <li class="list-group-item">Address : <%= @spaceship.address %></li>
             </ul>
@@ -23,16 +23,7 @@
     </div>
 
     <div class="col-md-4">
-      <div class="booking-info">
-        <div class="panel panel-default">
-          <div class="panel-heading">Find your day</div>
-            <div class="panel-body">
-              <p>Start Date :</p>
-              <p>End Date :</p>
-              <%= link_to "Book Me", new_spaceship_booking_path(@spaceship), class: "btn btn-primary" %>
-            </div>
-        </div>
-      </div>
+        <%= render 'bookings/new', booking: Booking.new, spaceship: @spaceship  %>
     </div>
   </div>
 </div>
