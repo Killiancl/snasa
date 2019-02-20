@@ -10,14 +10,39 @@
   <div class="row">
     <div class="col-md-8">
       <h1><%= @spaceship.title %></h1>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>Average Rating :
+            <% if @spaceship.average_rating %>
+              <% @spaceship.average_rating.to_i.times do  %>
+                <span class="glyphicon glyphicon-star"></span>
+              <% end %>
+            <% else %>
+              <p>Ce vaisseau n'a pas encore de note</p>
+            <% end %>
+          </p>
+        </div>
+      </div>
         <div class="panel panel-default">
-          <div class="panel-body">
-            <ul class="list-group">
-              <li class="list-group-item"><%= @spaceship.seat %></li>
-              <li class="list-group-item"><%= @spaceship.price_per_day %> €</li>
-              <li class="list-group-item">Address : <%= @spaceship.address %></li>
-            </ul>
-          </div>
+          <div class="panel-heading">Informations</div>
+            <div class="panel-body">
+              <ul class="list-group">
+                <li class="list-group-item"><%= @spaceship.seat %></li>
+                <li class="list-group-item"><%= @spaceship.price_per_day %> €</li>
+                <li class="list-group-item">Address : <%= @spaceship.address %></li>
+              </ul>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">Reviews</div>
+            <div class="panel-body">
+              <% @spaceship.bookings.each do |booking| %>
+                <% if booking.review != nil %>
+                  <p><%= booking.user.first_name %> : <%= booking.review %></p><hr>
+                <% end %>
+              <% end %>
+            </div>
         </div>
 
       <div
