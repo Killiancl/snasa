@@ -3,10 +3,11 @@
     <ul>
       <% @bookings.each do |booking| %>
         <li><%= booking.spaceship.title %> - Start date: <%= booking.start_at%> <span> to </span> <%= booking.end_at %></li>
-        <p> Review : <%= booking.review %> </p>
-        <p> Rating : <%= booking.rating %> </p>
         <% if booking.review == nil %>
           <%= link_to "Add a review", new_booking_review_path(booking) %>
+        <% else %>
+          <p> Review : <%= booking.review %> </p>
+          <p> Rating : <%= booking.rating %> </p>
         <% end %>
       <% end %>
     </ul>
