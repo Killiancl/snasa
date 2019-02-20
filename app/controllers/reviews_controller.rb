@@ -5,8 +5,10 @@ class ReviewsController < ApplicationController
 
   def create
     @booking = Booking.find(params[:booking_id])
-    if @review.save
-      redirect_to booking_review_path(@booking)
+    @booking.review = params[:booking][:review]
+    @booking.rating = params[:booking][:rating]
+    if @booking.save
+      redirect_to bookings_path
     else
       render :new
     end
