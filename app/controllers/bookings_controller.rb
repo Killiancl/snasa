@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.create(booking_params)
+    @booking = Booking.new(booking_params)
     @spaceship = Spaceship.find(params[:spaceship_id])
     @booking.spaceship = @spaceship
     # TODO: set booking user to current_user
@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
-      render :new
+      render 'spaceships/show', locals: {booking: @booking, spaceship: @spaceship}
     end
   end
 
