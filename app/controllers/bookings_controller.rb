@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.create(booking_params)
+    @booking = Booking.new(booking_params)
     @spaceship = Spaceship.find(params[:spaceship_id])
     @booking.spaceship = @spaceship
     @booking.user = current_user
