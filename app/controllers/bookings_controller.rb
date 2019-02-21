@@ -8,7 +8,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @spaceship = Spaceship.find(params[:spaceship_id])
     @booking.spaceship = @spaceship
-    # TODO: set booking user to current_user
     @booking.user = current_user
     if @booking.save
       redirect_to bookings_path
@@ -31,8 +30,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_at, :end_at, :user_id, :spaceship_id)
   end
-
 end
-
-  #   params.require(:restaurant).permit(:name, :address, :stars)
-  # end
