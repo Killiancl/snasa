@@ -6,20 +6,48 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-md-4">
+
               <div class="banner-booking" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://thenewswheel.com/wp-content/themes/patterns/timthumb.php?src=https://thenewswheel.com/wp-content/uploads/2018/05/Millennium-Falcon.jpg&q=90&w=660&zc=1);">
               </div>
             </div>
+
+            <!---------------------------- MODAL ------------------------->
             <div class="col-md-8">
               <p><strong> Dates </strong> : <%= booking.start_at%> to <%= booking.end_at %></p>
             <% if booking.review == nil %>
-              <%= link_to "Add a review", new_booking_review_path(booking), class: "btn btn-primary" %>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Add a Review
+              </button>
+
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Your Review</h4>
+                      </div>
+                      <div class="modal-body">
+                      <%=  render 'reviews/new', url: booking_reviews_path(booking), booking: booking  %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<!------------------------- MODAL END ----------------------------------------->
+
             <% else %>
+
               <p><strong> My Review </strong> : <%= booking.review %></p>
               <p><strong> My Rating </strong> : <%= booking.rating %></p>
             <% end %>
+
           </div>
         </div>
       </div>
     </div>
   <% end %>
 </div>
+
+
+
+
+
