@@ -16,4 +16,8 @@ class Spaceship < ApplicationRecord
 
     bookings_with_rating.average(:rating)
   end
+
+  def available?(date_range)
+    bookings.overlapping(date_range).empty?
+  end
 end

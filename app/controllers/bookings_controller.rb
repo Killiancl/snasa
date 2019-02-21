@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
-      render :new
+      render 'spaceships/show', locals: {booking: @booking, spaceship: @spaceship}
     end
   end
 
