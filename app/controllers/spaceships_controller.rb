@@ -11,5 +11,11 @@ class SpaceshipsController < ApplicationController
       lng: @spaceship.longitude,
       lat: @spaceship.latitude
     }]
+    @disableddate = @spaceship.bookings.map do |booking|
+      {
+        from: booking.start_at.strftime("%Y-%m-%d"),
+        to: booking.end_at.strftime("%Y-%m-%d")
+      }
+    end
   end
 end

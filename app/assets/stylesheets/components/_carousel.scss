@@ -4,18 +4,40 @@
   width: 100%;
 
 
-  .item {
 
-    object-fit: cover;
+  .item {
+    background-image: fit;
     height: 100%;
     width: 100%;
+    background-image:
+    linear-gradient(to bottom, rgba(255,0,0,0), #181C1F),
+    url("https://res.cloudinary.com/dyzsumrcv/image/upload/v1550672207/background_home.jpg");
   }
   .main-item {
     object-fit: cover;
     height: 100%;
     width: 100%;
+    background-image:
+    linear-gradient(to bottom, rgba(255,0,0,0), #181C1F),
+    url("https://res.cloudinary.com/dyzsumrcv/image/upload/v1550672207/background_home.jpg");
+
   }
 }
+
+
+
+.carousel-inner > .item {
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+  background-size: cover;
+  background-image:
+  linear-gradient(to bottom, rgba(255,0,0,0), #181C1F),
+  url("https://res.cloudinary.com/dyzsumrcv/image/upload/v1550672207/background_home.jpg");
+
+
+}
+
 
 
 
@@ -23,8 +45,8 @@
   width: 100%;
   height:100%;
   object-fit: cover;
-  // image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%);
   background-size: cover;
+
 }
 
 .carousel-caption {
@@ -36,13 +58,4 @@
 
 }
 
-// position: absolute;
-//   right: 15%;
-//   bottom: 20px;
-//   left: 15%;
-//   z-index: 10;
-//   padding-top: 20px;
-//   padding-bottom: 20px;
-//   color: $carousel-caption-color;
-//   text-align: center;
-//   text-shadow: $carousel-text-shadow;
+
