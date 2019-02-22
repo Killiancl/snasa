@@ -54,7 +54,7 @@
     </div>
 
     <div class="col-md-4">
-        <%= render 'bookings/new', booking: Booking.new, spaceship: @spaceship  %>
+        <%= render 'bookings/new', booking: Booking.new, spaceship: @spaceship, disableddate: @disableddate.to_json  %>
     </div>
   </div>
 </div>
