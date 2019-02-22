@@ -10,7 +10,16 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  opacity: 0.8;
 
+}
+
+.bigcard a:hover {
+  text-decoration:none;
+}
+
+.card:hover {
+  text-decoration:none;
 }
 
 .card-trip {
@@ -19,6 +28,10 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 15px;
   color: #00080F;
+
+}
+.card-trip:hover {
+  text-decoration: none;
 
 }
 
@@ -32,6 +45,12 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+
+}
+
+.card-trip h2:hover {
+  text-decoration: none;
+  opacity: 0.7;
 }
 
 .card-trip p {
@@ -40,6 +59,9 @@
   margin: 0;
 }
 
+.card-trip:hover {
+  text-decoration: none;
+}
 
 .card-trip .card-trip-infos {
   padding: 16px;
@@ -47,6 +69,10 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+.card-trip-infos:hover {
+  text-decoration: none;
 }
 
 .card-trip-infos .card-trip-user {
@@ -62,6 +88,10 @@
   top: 10px;
   width: 40px;
   border-radius: 50%;
+}
+
+.card-user:hover {
+  text-decoration: none;
 }
 .card-category {
   position: absolute;
@@ -96,6 +126,7 @@
 }
 .card-link:hover {
   opacity: 0.1;
+  text-decoration: none;
 }
 
 .card-product {
