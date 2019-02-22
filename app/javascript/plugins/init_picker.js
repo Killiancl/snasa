@@ -9,6 +9,7 @@ const initPicker = () => {
 
   if (pickerElement) {
     flatpickr(pickerElement, {
+      minDate: "today",
       dateFormat: "Y-m-d",
       disable: JSON.parse(disabledDate)
 
@@ -24,6 +25,7 @@ const initPickerEnd = () => {
 
   if (pickerElement) {
     flatpickr(pickerElement, {
+      minDate: "today",
       dateFormat: "Y-m-d",
       disable: JSON.parse(disabledDate)
     });
