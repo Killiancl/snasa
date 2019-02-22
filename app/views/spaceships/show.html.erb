@@ -1,60 +1,63 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @spaceship.photo %>)">
-    <div class="container">
-      <h1>Rent <%= @spaceship.title %> <strong>awesome experiences</strong> to <strong>adventurous snails</strong>!</h1>
-      <p>Change your life and go to the space with all your friends</p>
-    </div>
-  </div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <h1><%= @spaceship.title %></h1>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <p>Average Rating :
-            <% if @spaceship.average_rating %>
-              <% @spaceship.average_rating.to_i.times do  %>
-                <span class="glyphicon glyphicon-star"></span>
-              <% end %>
-            <% else %>
-              <p>Ce vaisseau n'a pas encore de note</p>
-            <% end %>
-          </p>
-        </div>
+<div class="background-show">
+  <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @spaceship.photo %>)">
+    <div class="container show-container">
+        <h1>Rent <%= @spaceship.title %> <strong>awesome experiences</strong> to <strong>adventurous snails</strong>!</h1>
+        <p>Change your life and go to the space with all your friends</p>
       </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">Informations</div>
-            <div class="panel-body">
-              <ul class="list-group">
-                <li class="list-group-item"><%= @spaceship.seat %></li>
-                <li class="list-group-item"><%= @spaceship.price_per_day %> €</li>
-                <li class="list-group-item">Address : <%= @spaceship.address %></li>
-              </ul>
-            </div>
-        </div>
-
-        <div class="panel panel-default">
-          <div class="panel-heading">Reviews</div>
-            <div class="panel-body">
-              <% @spaceship.bookings.each do |booking| %>
-                <% if booking.review != nil %>
-                  <p><%= booking.user.first_name %> : <%= booking.review %></p><hr>
+    </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="main-title"><%= @spaceship.title %></h1>
+            <div class="show-rating">
+              <p class ="show-text">Average Rating :
+                <% if @spaceship.average_rating %>
+                  <% @spaceship.average_rating.to_i.times do  %>
+                    <span class="glyphicon glyphicon-star"></span>
+                  <% end %>
+                <% else %>
+                  <p class ="show-text">Ce vaisseau n'a pas encore de note</p>
                 <% end %>
-              <% end %>
+              </p>
             </div>
+            <div class="show-information">Informations</div>
+              <div class="panel-body">
+                <ul class="list-group">
+                  <li class="list-show"><%= @spaceship.seat %> seats</li>
+                  <li class="list-show"><%= @spaceship.price_per_day %> €</li>
+                  <li class="list-show">Address : <%= @spaceship.address %></li>
+                </ul>
+              </div>
+
+            <div class="show-description">
+              <div class="description-heading">Description</div>
+              <p class="show-text"><%= @spaceship.description %></p>
+            </div>
+
+          <div class="show-review">
+            <div class="review-heading">Reviews</div>
+              <div class="panel-body">
+                <% @spaceship.bookings.each do |booking| %>
+                  <% if booking.review != nil %>
+                    <p class ="show-text"><%= booking.user.first_name %> : <%= booking.review %></p><hr>
+                  <% end %>
+                <% end %>
+              </div>
+          </div>
+
+        <div
+          id="map"
+          style="width: 100%;
+          height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        >
         </div>
-
-      <div
-        id="map"
-        style="width: 100%;
-        height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      >
       </div>
-    </div>
 
-    <div class="col-md-4">
-        <%= render 'bookings/new', booking: Booking.new, spaceship: @spaceship  %>
+      <div class="col-md-4">
+          <%= render 'bookings/new', booking: Booking.new, spaceship: @spaceship  %>
+      </div>
     </div>
   </div>
 </div>

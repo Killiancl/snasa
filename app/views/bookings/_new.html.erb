@@ -1,12 +1,12 @@
 <div class="booking-info">
-  <div class="panel panel-default">
-    <div class="panel-heading">Book Spaceship</div>
-      <div class="panel-body">
+  <div class="book-panel">
+    <div class="book-heading">Book Spaceship</div>
+      <div class="book-body">
           <%= simple_form_for [spaceship, booking] do |f| %>
             <%= f.input :start_at, as: :string, placeholder: 'jj/mm/yy' %>
             <%= f.input :end_at, as: :string , placeholder: 'jj/mm/yy' %>
           <%= f.button :submit, class: 'btn btn-primary' %>
-        <% end %>  
+        <% end %>
     </div>
   </div>
 </div>
