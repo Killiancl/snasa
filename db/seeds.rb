@@ -20,3 +20,4 @@ Spaceship.create!(title: "Ariane", description:"", seat:"6", price_per_day: 200,
 
 
 Spaceship.create!(title: "Soyouz", description:"", seat:"2", price_per_day: 25, address: "78 rue Baudin", photo: "https://media.ouest-france.fr/v1/pictures/260b4457710c1b23f7e33693913a5c41-le-nouveau-satellite-espion-francais-lance-par-une-soyouz-russe.jpg?width=1260&height=712&fill=0&focuspoint=74%2C46&cropresize=1&client_id=cmsfront&sign=d8f8ec4b318f28201bacb4507b9a4b894221ab8f164c8659383116c5bc862216", user: vador)
+
