@@ -39,7 +39,7 @@
               <p><strong> My Review </strong> : <%= booking.review %></p>
               <p><strong> My Rating </strong> : <%= booking.rating %></p>
             <% end %>
-
+            <%= link_to "See spaceship", spaceship_path(booking.spaceship_id), class: "btn btn-primary" %>
           </div>
         </div>
       </div>
