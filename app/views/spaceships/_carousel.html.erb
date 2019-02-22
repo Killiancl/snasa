@@ -3,10 +3,11 @@
   <div class="container"></div>
     <ol class="carousel-indicators">
     </ol>
+
     <div class="carousel-inner" role="listbox">
       <div class="item active">
         <div class="main-item">
-          <img class="first-image" src="https://res.cloudinary.com/dyzsumrcv/image/upload/v1550672207/background_home.jpg">
+
           <div class="carousel-caption">
             <h1>SNASA</h1>
             <p>Snail National Aeronautics and Space Administration</p>
@@ -14,11 +15,11 @@
           </div>
         </div>
       </div>
+
       <% @spaceships.each do |spaceship| %>
-        <div class="item">
+        <div class="item " style="background-image: linear-gradient(to bottom, rgba(255,0,0,0), #181C1F), url(<%= spaceship.photo %>)">
           <%= link_to spaceship_path(spaceship) do %>
-            <%= image_tag(spaceship.photo)%>
-              <div class="carousel-caption">
+              <div class="carousel-caption" >
                  <h2><%= spaceship.title %></h2>
                  <p><%= spaceship.seat %> places</p>
                  <h2 class="card-trip-pricing"><%= spaceship.price_per_day %> €</h2>
