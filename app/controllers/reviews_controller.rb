@@ -7,10 +7,11 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @booking.review = params[:booking][:review]
     @booking.rating = params[:booking][:rating]
-    if @booking.save
+    if @booking.save(validate: false)
       redirect_to bookings_path
     else
-      render :new
+      @bookings = Booking.where(user: current_user)
+      render 'bookings/index'
     end
   end
 
